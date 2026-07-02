@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Para vos ❤️</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#9C308D;overflow-x:hidden;color:#333}
+#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.heart{position:absolute;top:-10vh;color:#ffb6d9;animation:fall linear infinite;font-size:20px}
+@keyframes fall{to{transform:translateY(120vh) rotate(360deg)}}
+.center{height:100vh;display:flex;justify-content:center;align-items:center}
+.card{background:rgba(255,255,255,.95);padding:40px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.3);text-align:center;max-width:700px}
+button{background:#9C308D;color:#fff;border:none;padding:15px 30px;border-radius:30px;font-size:18px;cursor:pointer}
+button:hover{background:#7b2570}
+#letter{display:none;padding:60px 20px}
+.paper{background:#fff;max-width:900px;margin:auto;padding:40px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.3);position:relative}
+.corner{position:absolute;font-size:28px}
+.tl{top:10px;left:10px}.tr{top:10px;right:10px}.bl{bottom:10px;left:10px}.br{bottom:10px;right:10px}
+img{max-width:320px;width:100%;display:block;margin:30px auto;border-radius:15px;border:6px solid #fff;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.fade{animation:fade .8s}@keyframes fade{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+</style></head>
+<body>
+<div id="hearts"></div>
+<section id="home" class="center">
+<div class="card">
+<h1 style="font-size:90px;margin:0">❤️</h1>
+<h2>Para la persona más especial</h2>
+<p>Hay personas que escriben cartas...</p>
+<p><b>Yo preferí aprender programación para escribirte una.</b></p>
+<button onclick="openLetter()">Abrir carta 💌</button>
+</div></section>
+
+<section id="letter">
+<div class="paper fade">
+<div class="corner tl">❤️</div><div class="corner tr">❤️</div><div class="corner bl">❤️</div><div class="corner br">❤️</div>
+<h1 style="text-align:center;color:#9C308D">Mi amor ❤️</h1>
+<p><strong>Karen lo que einto por ti no creo que se pueda expresar con palabras, me gusta demostrarlo con acciones y a nuestra distancia esto es lo unico que puedo hacer ahorita, a pesar de ello lo unico que siento haberte demostradoes desprecio y odio quiza, de verdad lamento lo que paso solo me aleje de ti sin importarme lo que llegaras a sentir, despues queme lo unico cpn lo que me demostraste amor solo quiero disculparme de alguna u otra manera te agradezco mucho que le allas dado otra oportunidad a nuestra relacion creeme que no planeo desperdiciarla. me alegra que quieras hacer las cosas mejor pues eso me demuestra que ahora las cosas pueden ser mejor para los dos, pasamos 1 año separados y no hubo nadie quien se te comparada de verdad te amo y quiero que esto de verdad verdad funcione le pido a Dios por nosotros y que logremo todo lo que queremos hacer juntos </strong></p>
+<p>Gracias por estar conmigo, por hacerme sonreír y por ser una persona tan importante para mí.</p>
+<p>Con mucho cariño,<br><b>Bani ❤️</b></p>
+<img src="sisisi.png" alt="Nuestra foto">
+<p style="text-align:center"><i>Mi lugar favorito siempre va a ser donde estés vos.</i></p>
+<div style="text-align:center"><button onclick="window.scrollTo({top:0,behavior:'smooth'})">Volver arriba ⬆️</button></div>
+</div></section>
+
+<script>
+function openLetter(){document.getElementById('home').style.display='none';let l=document.getElementById('letter');l.style.display='block';window.scrollTo({top:0,behavior:'smooth'});}
+const c=document.getElementById('hearts');
+for(let i=0;i<35;i++){let h=document.createElement('div');h.className='heart';h.textContent='❤️';h.style.left=Math.random()*100+'vw';h.style.animationDuration=(6+Math.random()*8)+'s';h.style.animationDelay=(-Math.random()*10)+'s';h.style.fontSize=(12+Math.random()*20)+'px';c.appendChild(h);}
+</script>
+</body></html>
